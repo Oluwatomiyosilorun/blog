@@ -1,0 +1,122 @@
+
+
+.article {
+  width: 100%;
+  &__container {
+    @include container;
+    &__card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 8px;
+      @include respond(small) {
+        flex-direction: column;
+      }
+    }
+    &__img {
+      width: 500px;
+      height: 280px;
+      flex: none;
+      margin: 0px 16px 0px 0px;
+      @include respond(small) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__timeframe {
+      display: flex;
+      width: 20%;
+      justify-content: space-between;
+      align-items: baseline;
+      small {
+        margin: 0;
+      }
+    }
+    &__title {
+      height: 26px;
+      font-family: ProRegular;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: $black01;
+    }
+    &__excerpt {
+      font-family: ProText;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+    }
+    &__footer {
+      width: 612px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: absolute;
+      bottom: 0px;
+      @include respond(small) {
+        width: 100%;
+      }
+      small {
+        color: $black20;
+      }
+      a{
+        color: $primary01;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__posts {
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__individual__box {
+      @include container;
+      width: 350px;
+      height: 402px;
+      left: 0px;
+      top: 0px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+      &__img {
+        width: 330px;
+        height: 200px;
+      }
+    }
+    &__timeframe{
+      @extend .article__container__timeframe;
+    }
+    &__details{
+      &__title {
+        @extend .article__container__title;
+        font-family: ProText;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+      }
+      &__excerpt{
+        @extend .article__container__excerpt;
+      }
+    }
+    &__footer{
+      @extend .article__container__footer;
+      width: 330px;
+    }
+  }
+}

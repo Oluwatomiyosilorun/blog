@@ -1,0 +1,34 @@
+{
+  "name": "blogPost",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@types/isomorphic-fetch": "0.0.35",
+    "apollo-boost": "^0.4.9",
+    "axios": "^0.24.0",
+    "core-js": "^3.19.3",
+    "easy-read-time": "^1.0.6",
+    "flutterwave-vue-v3": "^1.0.5",
+    "graphql": "^16.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.15.8",
+    "reading-time": "^1.5.0",
+    "skeleton-loader-vue": "^1.0.10",
+    "vue": "^2.6.14",
+    "vue-apollo": "^3.1.0",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "sass": "^1.46.0",
+    "sass-loader": "^10.2.0"
+  }
+}
