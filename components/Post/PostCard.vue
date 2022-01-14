@@ -8,12 +8,18 @@
             <img :src="mainPost.jetpack_featured_media_url" />
           </div>
           <div class="article__container__description">
-            <section class="article__container__timeframe" aria-labelledby="timeframe">
+            <section
+              class="article__container__timeframe"
+              aria-labelledby="timeframe"
+            >
               <small>Frontend</small>
               <small class="time">1 hour ago</small>
             </section>
 
-            <section class="article__container__details" aria-labelledby="section-details">
+            <section
+              class="article__container__details"
+              aria-labelledby="section-details"
+            >
               <h4
                 v-html="mainPost.title.rendered"
                 class="article__container__title"
@@ -25,13 +31,18 @@
               ></p>
             </section>
 
-            <section class="article__container__footer" aria-labelledby="section-footer">
+            <section
+              class="article__container__footer"
+              aria-labelledby="section-footer"
+            >
               <small>{{ mainPost.date }}</small>
-              <a
-                :href="`blog/${mainPost.slug}`"
-                class="article__container__footer__direction"
-                >Read Full &#8594;</a
-              >
+              <div>
+                <a
+                  :href="`blog/${mainPost.slug}`"
+                  class="article__container__footer__direction"
+                  >Read Full &#8594;</a
+                >
+              </div>
             </section>
           </div>
         </div>
@@ -51,29 +62,38 @@
               alt=""
               class="article__posts__individual__box__img"
             />
-            <section class="article__posts_timeframe" aria-labelledby="timeframe">
+            <section
+              class="article__posts_timeframe"
+              aria-labelledby="timeframe"
+            >
               <small>Frontend</small>
               <small class="time">1 hour ago</small>
             </section>
 
-            <section class="article__posts_details" aria-labelledby="section-details">
-              <h4
-                class="article__posts__details__title"
-                v-html="post.title.rendered"
-                role="heading"
-              ></h4>
+            <section
+              class="article__posts_details"
+              aria-labelledby="section-details"
+            >
+              <h4 class="article__posts__details__title" role="heading">
+                {{ post.title.rendered | truncate(100, "...") }}
+              </h4>
               <p class="article__posts__details__excerpt">
                 {{ post.excerpt.rendered | truncate(100, "...") }}
               </p>
             </section>
 
-            <section class="article__posts__footer" aria-labelledby="section-footer">
+            <section
+              class="article__posts__footer"
+              aria-labelledby="section-footer"
+            >
               <small>{{ post.date }}</small>
-              <a
-                :href="`blog/${post.slug}`"
-                class="article__posts__footer__direction"
-                >Read Full &#8594;</a
-              >
+              <div>
+                <a
+                  :href="`blog/${mainPost.slug}`"
+                  class="article__container__footer__direction"
+                  >Read Full &#8594;</a
+                >
+              </div>
             </section>
           </div>
         </div>
@@ -84,6 +104,7 @@
 
 <script>
 import Vue from "vue";
+
 export default Vue.extend({
   computed: {
     isFetchingPosts() {

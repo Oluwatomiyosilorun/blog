@@ -3,7 +3,7 @@
     type="rect"
     :width="1155"
     :height="250"
-    animation="pulse"
+    animation="wave"
   />
 </template>
 <script>

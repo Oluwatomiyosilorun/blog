@@ -3,8 +3,9 @@
     @media (max-width: 1000px) { @content };
   }
   @if $breakpoint == small {
-    @media (max-width: 700px) { @content };
+    @media (max-width: 600px) { @content };
   }
+  @if $breakpoint == medium {}
 }
 
 

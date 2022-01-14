@@ -1,5 +1,3 @@
-
-
 .article {
   width: 100%;
   &__container {
@@ -42,7 +40,6 @@
       }
     }
     &__title {
-      height: 26px;
       font-family: ProRegular;
       font-style: normal;
       font-weight: 900;
@@ -50,6 +47,7 @@
       line-height: 26px;
       display: flex;
       align-items: center;
+      margin: 8px 0px;
       color: $black01;
       @include respond(small) {
         font-size: 18px;
@@ -61,6 +59,13 @@
       display: flex;
       align-items: center;
       text-align: justify;
+      @include respond(small) {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
     &__footer {
       width: 612px;
@@ -73,11 +78,14 @@
       padding: 0px 4px;
       @include respond(small) {
         width: 100%;
+        div{
+          padding-right: 15px;
+        }
       }
       small {
         color: $black20;
       }
-      a{
+      a {
         color: $primary01;
         text-decoration: none;
       }
@@ -116,10 +124,10 @@
         height: 200px;
       }
     }
-    &__timeframe{
+    &__timeframe {
       @extend .article__container__timeframe;
     }
-    &__details{
+    &__details {
       &__title {
         @extend .article__container__title;
         font-family: ProText;
@@ -127,14 +135,17 @@
         font-size: 18px;
         line-height: 21px;
       }
-      &__excerpt{
+      &__excerpt {
         @extend .article__container__excerpt;
       }
     }
-    &__footer{
+    &__footer {
       @extend .article__container__footer;
       width: 330px;
-      padding: 0px 4px;
+      @include respond(small) {
+        width: 100%;
+      }
     }
   }
 }
+
