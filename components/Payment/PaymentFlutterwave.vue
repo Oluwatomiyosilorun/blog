@@ -68,7 +68,7 @@ export default {
 .payment__container {
   margin: 10% 0;
   text-align: center;
-  &__title{
+  .payment__title{
     font-family: ProRegular;
     font-style: normal;
     font-weight: 500;
@@ -78,7 +78,7 @@ export default {
     margin: 0;
     // color: $black01;
   }
-  &__detail{
+  .payment__detail{
     font-family: ProRegular;
     font-size: 22px;
     line-height: 32px;
@@ -88,7 +88,7 @@ export default {
       font-size:15px;
     }
   }
-  &__button{
+  .payment__button{
     background-color: black;
     color: white;
     padding: 12px 55px;
