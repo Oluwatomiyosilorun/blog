@@ -89,7 +89,7 @@
               <small>{{ post.date }}</small>
               <div>
                 <a
-                  :href="`blog/${mainPost.slug}`"
+                  :href="`blog/${post.slug}`"
                   class="article__container__footer__direction"
                   >Read Full &#8594;</a
                 >
