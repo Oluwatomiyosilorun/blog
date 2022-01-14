@@ -33,7 +33,7 @@ export default {
         customizations: {
           title: "dasdas",
           description: "Customization Description",
-          logo: "https://flutterwave.com/images/logo-colored.svg",
+          logo: "",
         },
         callback: this.makePaymentCallback,
         onclose: this.closedPaymentModal,

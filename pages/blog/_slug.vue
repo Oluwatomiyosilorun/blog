@@ -1,5 +1,5 @@
 <template>
-  <main class="post individual">
+  <main class="post individual" v-if="!isFetchingSinglePost && post.hasOwnProperty('title')">
     <h1>{{ post.title.rendered }}</h1>
     <small class="date">{{ post.date | dateformat }}</small>
     <section v-html="post.content.rendered"></section>
@@ -10,12 +10,16 @@
 export default {
   computed: {
     post() {
-      return this.$store.getters["blog/singlePost"];
-    }
+      return this.$store.getters["blog/getSinglePost"];
+    },
+    isFetchingSinglePost() {
+      return this.$store.getters["blog/getIsFetchingSinglePost"];
+    },
   },
   created() {
-    this.$store.dispatch("blog/fetchPost", this.slug);
-  }
+    this.$store.dispatch("blog/fetchPost", this.$route.params.slug);
+    // console.log(this.$route.params);
+  },
 };
 </script>
 
