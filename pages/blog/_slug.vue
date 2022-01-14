@@ -1,5 +1,5 @@
 <template>
-  <main class="post individual">
+  <main class="post__individual">
     <PostMainLoader v-if="isFetchingPosts" />
     <div v-else>
       <h1>{{ post.title.rendered }}</h1>
@@ -36,22 +36,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main.post {
-  margin: 60px auto 50px;
-  max-width: 800px;
-  padding: 0 30px 70px;
-}
 
-h1 {
-  color: black;
-  font-size: 40px;
-}
-
-section {
-  color: #444;
-}
-
-.date {
-  text-align: center;
-}
 </style>

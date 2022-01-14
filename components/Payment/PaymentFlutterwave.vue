@@ -1,18 +1,18 @@
 <template>
-  <section>
-    <h4>Join our Team of Writers</h4>
-    <p>
+  <section class="payment__container">
+    <h4 class="payment__title" role="heading">Join our Team of Writers</h4>
+    <p class="payment__detail">
       On dasdas, writers earn a living doing what they love.<br />
-      Getting started is easy. Just pay a one time <b>$25 fee</b> and everything is
-      ready to go.
+      Getting started is easy. Just pay a one time <b>$25 fee</b> and everything
+      is ready to go.
     </p>
-    <button @click="payViaService">Join Us</button>
+    <button type="button" role="button" @click="payViaService" class="payment__button" name="button">Join Us</button>
   </section>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: "PaymentFlutterWave",
   data() {
     return {
       paymentData: {
@@ -65,10 +65,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.payment__container {
   margin: 10% 0;
   text-align: center;
-  h4 {
+  &__title{
     font-family: ProRegular;
     font-style: normal;
     font-weight: 500;
@@ -78,14 +78,17 @@ section {
     margin: 0;
     // color: $black01;
   }
-  p{
+  &__detail{
     font-family: ProRegular;
     font-size: 22px;
     line-height: 32px;
     text-align: center;
     margin: 12px 0px;
+    @media only screen and (max-width:700px){
+      font-size:15px;
+    }
   }
-  button{
+  &__button{
     background-color: black;
     color: white;
     padding: 12px 55px;
