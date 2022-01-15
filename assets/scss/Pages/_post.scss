@@ -99,7 +99,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    &__individual__box {
+    &__individual__box{
       @include container;
       @include respond(small) {
         width: 100%;
@@ -148,21 +148,12 @@
     }
   }
 
-  .article__posts__box__skeleton{
+  .article__posts__box__loader{
     display: flex;
+    margin-top: 52px;
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    width: 350px;
-      height: 402px;
-      left: 0px;
-      top: 0px;
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-      margin-top: 52px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
   }
 }
 

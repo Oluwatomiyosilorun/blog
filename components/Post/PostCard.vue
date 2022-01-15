@@ -37,7 +37,11 @@
             >
               <small>{{ mainPost.date }}</small>
               <div>
-                <NuxtLink :to="`blog/${mainPost.slug}`" class="article__container__footer__direction">Read Full &#8594;</NuxtLink>
+                <NuxtLink
+                  :to="`blog/${mainPost.slug}`"
+                  class="article__container__footer__direction"
+                  >Read Full &#8594;</NuxtLink
+                >
               </div>
             </section>
           </div>
@@ -46,10 +50,10 @@
 
       <div class="article__posts">
         <div class="article__posts__box">
-          <div class="article__posts__box__skeleton" v-if="isFetchingPosts" >
-              <PostBoxLoader />
-              <PostBoxLoader />
-              <PostBoxLoader />
+          <div class="article__posts__box__loader" v-if="isFetchingPosts">
+            <PostBoxLoader />
+            <PostBoxLoader />
+            <PostBoxLoader />
           </div>
           <div
             class="article__posts__individual__box"
@@ -88,7 +92,11 @@
             >
               <small>{{ post.date }}</small>
               <div>
-                 <NuxtLink :to="`blog/${post.slug}`" class="article__container__footer__direction">Read Full &#8594;</NuxtLink>
+                <NuxtLink
+                  :to="`blog/${post.slug}`"
+                  class="article__container__footer__direction"
+                  >Read Full &#8594;</NuxtLink
+                >
               </div>
             </section>
           </div>
@@ -104,8 +112,7 @@ import Vue from "vue";
 export default Vue.extend({
   computed: {
     isFetchingPosts() {
-      // return this.$store.getters["blog/getIsFetchingPosts"];
-      return true;
+      return this.$store.getters["blog/getIsFetchingPosts"];
     },
     mainPost() {
       return this.$store.getters["blog/mainPost"];
